@@ -11,9 +11,13 @@ function run_msd_analysis()
 %% =========================== USER INPUTS ================================
 
 fnames = { ...
-    %'RKDA3-4.nd2 - C=1-1_spots', ...  % Brownian
-    %'RKD-A3-D.nd2 - C=1-1_spots', ... % Confined
-    'RKD-A4-C.nd2 - C=1-4_spots', ...  % Directed
+    'RKDA3-4.nd2 - C=1-1_spots', ...    % Brownian
+    %'RKD-A3-D.nd2 - C=1-1_spots', ...  % Confined
+    %'RKD-A4-C.nd2 - C=1-4_spots', ...  % Directed
+    %'C2-Ctrl-A1-1-1_spots', ...        % Control 1
+    %'Ctrl-A1-4-1_spots' ...            % Control 2
+    %'C2-Ctrl-A2-A-2_spots'             % Control 3 - Adjusted X & Y axis
+    
 };
 
 frameInterval_s = 5;
@@ -44,7 +48,7 @@ STAGE_FIT_WIDTH  = 7.5;
 colors = [ ...
     %58/255 9/255 235/255   % blue
     %0.20 0.60 0.25         % green
-    1, 0, 0;          % red
+    1, 0, 0;                % red
 ];
 
 USE_CUSTOM_MSD_AXES = true;
@@ -432,3 +436,4 @@ else
 end
 segments = segments(cellfun(@numel,segments) >= minLen);
 end
+
